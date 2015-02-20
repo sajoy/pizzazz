@@ -45,6 +45,13 @@ describe('Pizza', function() {
       feedingfrenzy.diameter = 50;
       expect(feedingfrenzy.slices()).to.equal(36)
     });
+    it('will cut up pizzas into sticks or slices depending on the cut selected', function() {
+      var feedingfrenzy = Object.create(Pizza);
+      feedingfrenzy.init();
+      feedingfrenzy.diameter = 10;
+      feedingfrenzy.sticks = true;
+      expect(feedingfrenzy.slices()).to.equal(12)
+    });
   });
 
 });
