@@ -13,10 +13,26 @@
       <h3>an attractive combination of dough, sauce, cheese and glamour.</h3>
       <div>
         <form id="orderForm">
-          
+          <label for="orderSize">How much Pizzazz?</label>
+          <input type="number" class="orderSize">
+          <div class="onePizza">
+            <label for="inches">How many inches of Pizzazz?</label>
+            <input type="number" class="inches">
+            <label for="cheese">Add cheese?</label>
+            <input type="number" class="cheese">
+            <label for="pepperoni">Add pepperoni?</label>
+            <input type="number" class="pepperoni">
+          </div>
           <button type="submit">Order Pizzazz</button>
         </form>
-
+      </div>
+      <div id="orderComplete">
+        <p>
+          Your order of <span class="number"></span> <span class="topping"></span> Pizzazz's has been placed!
+        </p>
+        <p>
+          Your order can feed <span class="mouths"></span> mouths (2 slice: 1 mouth, total of <span class="slices"></span> slices!)
+        </p>
       </div>
 
 
