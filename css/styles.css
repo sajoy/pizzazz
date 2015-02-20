@@ -1,2 +1,17 @@
+.container {
+  width: 100%;
+  color: #000;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.sidebar h1 {font-family: 'Lobster', cursive; font-size: 5em;}
+.sidebar {
+  padding: 50px;
+  background: url('http://themostawful.com/gmu/images/glitter2.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
 #orderForm {display: none;}
 #orderComplete {display: none;}
+#orderFail {display: none;}

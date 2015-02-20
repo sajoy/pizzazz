@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
@@ -9,34 +11,43 @@
   </head>
   <body>
     <div class="container">
-      <h1>Pizzazz</h1>
-      <h3>an attractive combination of dough, sauce, cheese and glamour.</h3>
-      <div>
-        <form id="sizeForm">
-          <label for="orderSize">How many Pizzazz?</label>
-          <input type="number" id="orderSize">
-          <button type="submit">Make some pizzazz!</button>
-        </form>
-        <form id="orderForm">
-          <div id="pizzas"></div>
-          <button type="submit">Order Pizzazz</button>
-        </form>
-      </div>
-      <div id="orderComplete">
-        <p>
-          Your order of <span class="number"></span> Pizzazz's has been placed!
-        </p>
-        <p>
-          Your order can feed <span class="mouths"></span> mouths (2 slice: 1 mouth, total of <span class="slices"></span> slices!)
-        </p>
-        <p>
-          Order contents:
-          <ul id="contents">
-          </ul>
-        </p>
-      </div>
+      <div class="row">
+        <div class="col-md-3 sidebar">
+          <h1 id ="refresh">Pizzazz</h1>
+          <h3> /p&#601;'zaz/ <i>noun.</i> an attractive combination of dough, sauce, cheese and glamour.</h3>
+        </div>
+        <div class="col-md-9 main">
+          <div>
+            <form id="sizeForm">
+              <label for="orderSize">How many Pizzazz?</label>
+              <input type="number" id="orderSize">
+              <button type="submit">Make some pizzazz!</button>
+            </form>
+            <form id="orderForm">
+              <div id="pizzas"></div>
+              <button type="submit">Order Pizzazz</button>
+            </form>
+          </div>
 
+          <div id="orderComplete">
+            <p>
+              Your order of <span class="number"></span> Pizzazz's has been placed!
+            </p>
+            <div id="receipt">
+              Order contents:
+              <ul id="contents">
+              </ul>
+            </div>
+          </div>
 
+          <div id="orderFail">
+            <p>
+              Don't want any Pizzaz? If you change your mind, you know where to find us!
+            </p>
+          </div>
+
+        </div>
+      </div>
     </div>
   </body>
 </html>
