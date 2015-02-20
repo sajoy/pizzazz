@@ -58,18 +58,31 @@ $(function(){
       for( var i = 0; i < numOfPizza; i++ ) {
         $('#pizzas').append(
           '<div class="onePizza">' +
-            '<label for="inches">How many inches of Pizzazz?</label>' +
-            '<input type="number" class="inches">' +
-            '<div class="toppings">' +
-              '<label for="sauce">Add sauce?</label>' +
-              '<input type="checkbox" value="sauce" class="sauce">' +
-              '<label for="cheese">Add cheese?</label>' +
-              '<input type="checkbox" value="cheese" class="cheese">' +
-              '<label for="pepperoni">Add pepperoni?</label>' +
-              '<input type="checkbox" value="pepperoni" class="pepperoni">' +
-            '</div>' +
-            '<label for="sticks">Make \'em Pizzazz sticks?</label>' +
-            '<input type="checkbox" class="sticks">' +
+          '<h1>Pizza Number '+ (i+1) +'</h1>' +
+           '<table>' +
+            '<tr>' +
+              '<td colspan="2">' +
+                '<input type="checkbox" class="sticks">' +
+                '<label for="sticks" class="sticks">Make \'em Pizzazz sticks?</label>' +
+              '</td>' +
+            '</tr>' +
+             '<tr>' +
+              '<td>' +
+                '<h3><label for="inches">Pizza size? (in inches)</label> </h3>' +
+                '<input type="number" class="inches">' +
+              '</td>' +
+              '<td>' +
+                '<div class="toppings">' +
+                  '<input type="checkbox" value="sauce" class="sauce">' +
+                  '<label for="sauce">Add sauce?</label> <br>' +
+                  '<input type="checkbox" value="cheese" class="cheese">' +
+                  '<label for="cheese">Add cheese?</label> <br>' +
+                  '<input type="checkbox" value="pepperoni" class="pepperoni">' +
+                  '<label for="pepperoni">Add pepperoni?</label> <br>' +
+                '</div>' +
+              '</td>' +
+            '</tr>' +
+          '</table>' +
           '</div>'
         );
       }
