@@ -36,7 +36,7 @@ var Pizza = {
       }
       slices = (Math.ceil(dia/2)) * tens;
     }
-    
+
     return slices;
   }
 };
@@ -60,12 +60,16 @@ $(function(){
           '<div class="onePizza">' +
             '<label for="inches">How many inches of Pizzazz?</label>' +
             '<input type="number" class="inches">' +
-            '<label for="sauce">Add sauce?</label>' +
-            '<input type="checkbox" value="sauce" class="sauce">' +
-            '<label for="cheese">Add cheese?</label>' +
-            '<input type="checkbox" value="cheese" class="cheese">' +
-            '<label for="pepperoni">Add pepperoni?</label>' +
-            '<input type="checkbox" value="pepperoni" class="pepperoni">' +
+            '<div class="toppings">' +
+              '<label for="sauce">Add sauce?</label>' +
+              '<input type="checkbox" value="sauce" class="sauce">' +
+              '<label for="cheese">Add cheese?</label>' +
+              '<input type="checkbox" value="cheese" class="cheese">' +
+              '<label for="pepperoni">Add pepperoni?</label>' +
+              '<input type="checkbox" value="pepperoni" class="pepperoni">' +
+            '</div>' +
+            '<label for="sticks">Make \'em Pizzazz sticks?</label>' +
+            '<input type="checkbox" class="sticks">' +
           '</div>'
         );
       }
@@ -96,6 +100,11 @@ $(function(){
         newPizza.toppings.push($('.pepperoni').val());
       }
 
+      if ($(this).find('.sticks').is(':checked')) {
+        newPizza.sticks = true;
+      }
+
+
       order.pizzas.push(newPizza);
     });
 
@@ -117,22 +126,26 @@ $(function(){
         toppingsList = "no toppings, just glamour.";
       }
 
-      var slices = "";
       var totalSlices = pizza.slices();
-      if (pizza.diameter > 28) {
-        slices += (totalSlices - 4) + ' yummy square slices and 4 awkward circle corners'
-      } else if (totalSlices === 1) {
-        slices += totalSlices + ' yummy good ol\' triangular slice';
-      } else {
-        slices += totalSlices + ' yummy good ol\' triangular slices';
+
+      if (!pizza.sticks) {
+        if (pizza.diameter > 28) {
+          totalSlices - 4;
+          totalSlices += ' yummy square slices and 4 awkward circle corners';
+        } else if (totalSlices === 1) {
+          totalSlices += ' yummy good ol\' triangular slice';
+        } else {
+          totalSlices += ' yummy good ol\' triangular slices';
+        }
       }
 
+      var sticks = '<li> (' + totalSlices + ') Pizzazz sticks with ' +
+                    toppingsList + '</li>';
+      var noSticks = '<li> (1) ' + pizza.diameter + ' inch Pizzazz with ' +
+                     toppingsList + ' [' + totalSlices + '] </li>';
+
       if (pizza.diameter > 0) {
-        $('#contents').append(
-          '<li> (1) ' + pizza.diameter +
-          ' inch Pizzazz with ' + toppingsList +
-          ' [' + slices + '] </li>'
-        )
+        pizza.sticks ? $('#contents').append(sticks) :  $('#contents').append(noSticks);
       } else {
         order.size -= 1;
         alert(
