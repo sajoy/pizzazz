@@ -43,35 +43,42 @@ describe('Pizza', function() {
       var feedingfrenzy = Object.create(Pizza);
       feedingfrenzy.init();
       feedingfrenzy.diameter = 50;
-      expect(feedingfrenzy.slices()).to.equal(36)
+      expect(feedingfrenzy.slices()).to.equal(36);
     });
     it('will cut up pizzas into 2in sticks or slices depending on the cut selected', function() {
       var feedingfrenzy = Object.create(Pizza);
       feedingfrenzy.init();
       feedingfrenzy.diameter = 9;
       feedingfrenzy.sticks = true;
-      expect(feedingfrenzy.slices()).to.equal(5)
+      expect(feedingfrenzy.slices()).to.equal(5);
     });
     it('cut sticks longer than 10in in half, so there\'s twice as many', function() {
       var feedingfrenzy = Object.create(Pizza);
       feedingfrenzy.init();
       feedingfrenzy.diameter = 15;
       feedingfrenzy.sticks = true;
-      expect(feedingfrenzy.slices()).to.equal(16)
+      expect(feedingfrenzy.slices()).to.equal(16);
     });
     it('cut sticks longer than 10in in half, so there\'s twice as many', function() {
       var feedingfrenzy = Object.create(Pizza);
       feedingfrenzy.init();
       feedingfrenzy.diameter = 26;
       feedingfrenzy.sticks = true;
-      expect(feedingfrenzy.slices()).to.equal(26)
+      expect(feedingfrenzy.slices()).to.equal(26);
     });
     it('cut sticks longer than 30in in thirds, so there\'s three times as many', function() {
       var feedingfrenzy = Object.create(Pizza);
       feedingfrenzy.init();
       feedingfrenzy.diameter = 35;
       feedingfrenzy.sticks = true;
-      expect(feedingfrenzy.slices()).to.equal(54)
+      expect(feedingfrenzy.slices()).to.equal(54);
+    });
+    it('will continue the pattern of slicing large pizza sticks approx 10in long', function() {
+      var superfeedingfrenzy = Object.create(Pizza);
+      superfeedingfrenzy.init();
+      superfeedingfrenzy.diameter = 50;
+      superfeedingfrenzy.sticks = true;
+      expect(superfeedingfrenzy.slices()).to.equal(125);
     });
   });
 

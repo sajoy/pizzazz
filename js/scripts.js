@@ -28,7 +28,6 @@ var Pizza = {
         slices = (Math.floor(Math.pow((Math.floor(dia / 4) / 2), 2)));
       }
     } else {
-
       if (dia > 9) {
         var tens = dia.toString().split("").map(Number)[0];
         tens === 1 ? tens += 1 : tens;
